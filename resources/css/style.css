@@ -115,7 +115,11 @@ padding: 10px 20px;
     box-shadow: 2px 2px 2px  rgb(213, 167, 3);
 }
 .container{
+
     /* width: 100%; */
+
+    width: 100%;
+
     height: 800px;
     background-color: rgb(19, 10, 10);
     display: flex;
@@ -125,6 +129,7 @@ padding: 10px 20px;
 }
 .wrapper{
     width: 80%;
+
     display: grid;
     grid-template-columns: auto auto;
     row-gap: 30%;
@@ -133,12 +138,32 @@ padding: 10px 20px;
 }
 
 .wrapper div{
+
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    
+}
+.pen{
+    width: 55px;
+    height: 55px;
+    font-size: 32px;
+    color: #ffc30e;
+    background-color:#efb60a7f;
+    padding: 10px;
+    border-radius: 60px;
+    box-shadow:  2px 2px 2px rgba(251, 255, 0, 0.5);
+    margin-bottom: 20px;
+}
+.left{
+
     display: flex;
     flex-direction: column;
     width: 50%;
     align-items: center;
     justify-content: center;
 }
+
 
 .wrapper div h5{
     color: white;
@@ -185,6 +210,69 @@ padding: 10px 20px;
     background-color:#e30b0b48;
     box-shadow: 2px 2px 2px rgba(255, 0, 0, 0.5);
 } 
+
+
+.left h5{
+    color: white;
+    font-size: 21px;
+}
+.left p{
+    color: white;
+    font-size: 18px;
+}
+.globe{
+    width: 55px;
+    height: 55px;
+    font-size: 35px;
+    color: #06c1cb;
+    background-color:#00f2ff62 ;
+    box-shadow:  2px 2px 2px rgba(3, 187, 243, 0.5);
+    padding: 10px;
+    border-radius: 60px;
+    margin-bottom: 20px;
+    margin-top: 150px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-right: 120px;
+
+}
+.right h5{
+    color: white;
+    font-size: 21px;
+}
+.right p{
+    color: white;
+    font-size: 18px;
+}
+.desktop{
+    width: 55px;
+    height: 55px;
+    font-size: 32px;
+    color: #31f700;
+    background-color:#5dff064c;
+    padding: 10px;
+    border-radius: 60px;
+    box-shadow:  2px 2px 2px rgba(0, 255, 8, 0.5);
+    margin-bottom: 20px;
+}
+.user{
+    width: 55px;
+    height: 55px;
+    font-size: 32px;
+    color: #eb0808;
+    background-color:#e30b0b48;
+    padding: 10px;
+    border-radius: 60px;
+    box-shadow:  2px 2px 2px rgba(255, 0, 0, 0.5);
+    margin-bottom: 20px;
+    margin-top: 170px;
+}
 
 .ani-wrap{
     width: 100%;
