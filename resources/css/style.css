@@ -5,6 +5,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body{
     /* height: 4000px; */
     background-image: url(../img/bodybg.jpg);
@@ -17,22 +18,26 @@ body{
     font-style: normal;
     background-attachment: fixed;
 }
+
 header{
    width: 100%;
    height: 45vh;
    display: flex;
    position: relative;
 }
+
 .logo img{
 position: absolute;
 top:-24px;
 width: 150px; 
 transition: top 0.3s;
 }
+
 .logo.scrolled{
     background-color: #000000a7;
     z-index: 1000;
 }
+
 .navbar{
     width: 100%;
     height: 75px;
@@ -43,10 +48,12 @@ padding: 10px 20px;
     transition: top 0.3s;
     background:transparent;
 }
+
 .navbar.scrolled{
     background-color: #000000a7;
     z-index: 1000;
 }
+
 .navbar a{
     text-decoration: none;
     color: white;
@@ -54,9 +61,11 @@ padding: 10px 20px;
     margin-left: 5px;
     margin-top: 25px;
 }
+
 .navbar a:hover{
     color: #98781A;
 }
+
    .drop-cont{
     top: 70px;
     min-width: 100px;
@@ -66,17 +75,20 @@ padding: 10px 20px;
     box-shadow: 3px 3px 3px rgba(190, 252, 255, .5);
     display: none;
 }
+
 #button{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .drop-cont a{
     text-decoration: none;
     display: block;
     color: white;
     margin-top: 20px;
 }
+
 .down{
     margin-left: 5px;
     font-size: 12px;
@@ -90,15 +102,18 @@ padding: 10px 20px;
     justify-content: center;
     align-items: center;
 }
+
 .headertxt h1{
     font-size: 54px;
     color: white;
 }
+
 .headertxt small{
     font-size: 22px;
     color: rgb(224, 220, 220);
     margin-top: 30px;
 }
+
 .headertxt a{
     text-decoration: none;
     color: black;
@@ -109,37 +124,43 @@ padding: 10px 20px;
     background-color: #98781A;
     box-shadow: 1px 1px 1px  #98781A
 }
+
 .headertxt a:hover{
     background-color:  rgb(213, 167, 3);
     color: white;
     box-shadow: 2px 2px 2px  rgb(213, 167, 3);
 }
+
 .container{
-
-    /* width: 100%; */
-
     width: 100%;
-
-    height: 800px;
+    height: auto;
+    padding: 100px;
     background-color: rgb(19, 10, 10);
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
+
 .wrapper{
-    width: 80%;
+    width: 60%;
     display: grid;
     grid-template-columns: auto auto;
-    row-gap: 30%;
+    gap: 10%;
     justify-items:center;
-    text-align: center;   
+    text-align: center;
+    /* margin-bottom: 50px;    */
 }
 
 .wrapper div{
-    height: 600px;
     display: flex;
-    justify-content: center;   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 5px 5px 4px rgb(0, 0, 3) ;
+    padding: 30px;
+    background-color: rgb(39, 20, 20);   
 }
 
 /* .pen{
@@ -231,7 +252,7 @@ padding: 10px 20px;
     margin-top: 150px;
 } */
 
-.right{
+/* .right{
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -247,7 +268,7 @@ padding: 10px 20px;
 .right p{
     color: white;
     font-size: 18px;
-}
+} */
 /* .desktop{
     width: 55px;
     height: 55px;
@@ -274,27 +295,29 @@ padding: 10px 20px;
 
 .ani-wrap{
     width: 100%;
-    height: 00px;
+    height: fit-content;
     background-color: rgb(19, 10, 10);
     display: flex;
     justify-content: center;
     align-items: center;
-
-    
 }
+
 .sidecont{
   width: 40%;
   margin-left: 15px;
 }
+
 .sidecont h3{
     font-size: 32px;
     color: white;
 }
+
 .sidecont small{
 
     font-size: 24px;
     color: rgba(255, 255, 255, 0.662);
 }
+
 .sliders {
     width: 100%;
     max-width: 500px; /* Width of the slider container */
