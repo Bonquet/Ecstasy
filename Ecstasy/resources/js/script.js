@@ -84,3 +84,34 @@ function closeSidebar() {
   overlay.style.display = 'none';
 }
 
+
+
+
+document.getElementById('quarterlyLink').addEventListener('click', function (event) {
+  event.preventDefault();
+  document.querySelector('.prices').style.display = 'flex';
+  document.querySelector('.prices2').style.display = 'none';
+});
+
+document.getElementById('annualLink').addEventListener('click', function (event) {
+  event.preventDefault();
+  document.querySelector('.prices').style.display = 'none';
+  document.querySelector('.prices2').style.display = 'flex';
+});
+
+// Set default view to Quarterly
+document.querySelector('.prices').style.display = 'flex';
+document.querySelector('.prices2').style.display = 'none';
+
+
+
+
+// Toggle navbar and hamburger icon for mobile view
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('navbar');
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('show');         // Toggle the navbar
+  hamburger.classList.toggle('active');    // Toggle the icon between hamburger and X
+});
+
