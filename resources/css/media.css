@@ -124,7 +124,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding: 150px 10px 50px;
     height: auto;
   }
 
@@ -132,7 +132,7 @@
     text-align: center;
     font-size: small;
     width: 100%;
-    margin-bottom: 112px;
+    margin-bottom: 50px;
 
   }
   .sidecont small{
@@ -140,6 +140,11 @@
   }
   .sidecont h3{
   margin-bottom: 30px;}
+
+  .sliders{
+    margin: 0;
+    padding: 0;
+  }
 
   .pricing {
     padding: 10px;

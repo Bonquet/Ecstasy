@@ -300,11 +300,12 @@ padding: 10px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 80px 0;
 }
 
 .sidecont{
   width: 40%;
-  margin-left: 15px;
+  margin: 0px 15px;
 }
 
 .sidecont h3{
@@ -323,13 +324,14 @@ padding: 10px 20px;
     max-width: 500px; /* Width of the slider container */
     height: 300px; /* Fixed height for slider */
     overflow: hidden;
-    margin: auto;
+    margin: 50px;
     position: relative;
 }
 
 .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: 100%;
 }
 
 .slides img {
@@ -337,6 +339,7 @@ padding: 10px 20px;
     height: 100%;
     object-fit: contain; /* Keeps the whole image visible */
     flex: 0 0 100%; /* Each image takes full width of the container */
+    animation: slide 30s ease-in-out infinite both;
 }
 
 .dots {
@@ -360,7 +363,7 @@ padding: 10px 20px;
 
 
 
-/* @keyframes slide{
+@keyframes slide{
     0%{
         transform: translateX(0);
     }
@@ -378,7 +381,7 @@ padding: 10px 20px;
     100%{
         transform: translateX(-500%);
     }
-} */
+}
 
 .pricing{
     width: 100%;
