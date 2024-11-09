@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 body{
-    height: 4000px;
+    /* height: 4000px; */
     background-image: url(../img/bodybg.jpg);
     background-position: center;
     background-size: cover;
@@ -129,7 +129,6 @@ padding: 10px 20px;
 }
 .wrapper{
     width: 80%;
-
     display: grid;
     grid-template-columns: auto auto;
     row-gap: 30%;
@@ -138,13 +137,12 @@ padding: 10px 20px;
 }
 
 .wrapper div{
-
     height: 600px;
     display: flex;
-    justify-content: center;
-    
+    justify-content: center;   
 }
-.pen{
+
+/* .pen{
     width: 55px;
     height: 55px;
     font-size: 32px;
@@ -162,7 +160,7 @@ padding: 10px 20px;
     width: 50%;
     align-items: center;
     justify-content: center;
-}
+} */
 
 
 .wrapper div h5{
@@ -211,7 +209,7 @@ padding: 10px 20px;
     box-shadow: 2px 2px 2px rgba(255, 0, 0, 0.5);
 } 
 
-
+/* 
 .left h5{
     color: white;
     font-size: 21px;
@@ -219,8 +217,8 @@ padding: 10px 20px;
 .left p{
     color: white;
     font-size: 18px;
-}
-.globe{
+} */
+/* .globe{
     width: 55px;
     height: 55px;
     font-size: 35px;
@@ -231,7 +229,7 @@ padding: 10px 20px;
     border-radius: 60px;
     margin-bottom: 20px;
     margin-top: 150px;
-}
+} */
 
 .right{
     display: flex;
@@ -250,7 +248,7 @@ padding: 10px 20px;
     color: white;
     font-size: 18px;
 }
-.desktop{
+/* .desktop{
     width: 55px;
     height: 55px;
     font-size: 32px;
@@ -259,9 +257,9 @@ padding: 10px 20px;
     padding: 10px;
     border-radius: 60px;
     box-shadow:  2px 2px 2px rgba(0, 255, 8, 0.5);
-    margin-bottom: 20px;
-}
-.user{
+    margin-bottom: 20px; 
+}*/
+/* .user{
     width: 55px;
     height: 55px;
     font-size: 32px;
@@ -272,11 +270,11 @@ padding: 10px 20px;
     box-shadow:  2px 2px 2px rgba(255, 0, 0, 0.5);
     margin-bottom: 20px;
     margin-top: 170px;
-}
+} */
 
 .ani-wrap{
     width: 100%;
-    height: 900px;
+    height: 00px;
     background-color: rgb(19, 10, 10);
     display: flex;
     justify-content: center;
@@ -297,25 +295,49 @@ padding: 10px 20px;
     font-size: 24px;
     color: rgba(255, 255, 255, 0.662);
 }
-.sliders{
+.sliders {
     width: 100%;
-    max-width: 1000px;
-    margin: auto;
+    max-width: 500px; /* Width of the slider container */
+    height: 300px; /* Fixed height for slider */
     overflow: hidden;
-
+    margin: auto;
+    position: relative;
 }
+
 .slides {
     display: flex;
-    transition: transform 1s ease-in-out;
-    width: 500%;
+    transition: transform 0.5s ease-in-out;
 }
+
 .slides img {
-    width: 20%;
-    height: 700px;
-    flex: 0 0 20%;
-    animation: slide 25s infinite;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps the whole image visible */
+    flex: 0 0 100%; /* Each image takes full width of the container */
 }
-@keyframes slide{
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+.dots .dot {
+    font-size: 12px; /* Size of the dot icon */
+    margin: 0 5px;
+    color: #bbb; /* Default color for inactive dots */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.dots .dot.active {
+    color: #333; /* Color for the active dot */
+}
+
+
+
+/* @keyframes slide{
     0%{
         transform: translateX(0);
     }
@@ -333,7 +355,7 @@ padding: 10px 20px;
     100%{
         transform: translateX(-500%);
     }
-}
+} */
 
 .pricing{
     width: 100%;
@@ -382,6 +404,18 @@ padding: 10px 20px;
     display: flex;
     width: 100%;   
 }
+.pricing-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .pricing-slider > div {
+    min-width: 100%;
+    flex: 0 0 100%;
+  }
+  
 .opt1{
     width:27%;
     height:600px;
