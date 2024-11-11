@@ -1,5 +1,19 @@
 
 
+// Wait for the entire page to load
+window.addEventListener("load", function() {
+  const loadingScreen = document.getElementById("loadingScreen");
+  
+  // Add fade-out effect
+  loadingScreen.classList.add("fade-out");
+
+  // Remove the loading screen from the DOM after fade-out animation ends
+  loadingScreen.addEventListener("transitionend", () => {
+    loadingScreen.style.display = "none";
+  });
+});
+
+
 document.getElementById('scrollLink').addEventListener('click', function(event) {
   event.preventDefault();  // Prevent the default link behavior
   document.getElementById('ourprices').scrollIntoView({
