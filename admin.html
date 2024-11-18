@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Manage Transactions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .transaction {
+            background-color: #ffffff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        .approve, .decline {
+            padding: 8px 12px;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .approve {
+            background-color: #28a745;
+        }
+        .decline {
+            background-color: #dc3545;
+        }
+        .approve:hover {
+            background-color: #218838;
+        }
+        .decline:hover {
+            background-color: #c82333;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Admin Panel - Manage Transactions</h1>
+    <div id="transactions"></div>
+
+    <script>
+        // Function to fetch all transactions and display them
+        async function fetchTransactions() {
+            try {
+                const response = await axios.get('http://localhost:3000/api/transactions');
+                const transactions = response.data;
+
+                const transactionsDiv = document.getElementById('transactions');
+                transactionsDiv.innerHTML = ''; // Clear previous content
+
+                transactions.forEach(transaction => {
+                    const transactionDiv = document.createElement('div');
+                    transactionDiv.classList.add('transaction');
+                    transactionDiv.innerHTML = `
+                        <p><strong>Transaction ID:</strong> ${transaction.id}</p>
+                        <p><strong>Amount:</strong> ${transaction.amount} USD</p>
+                        <p><strong>Status:</strong> <span id="status-${transaction.id}">${transaction.status}</span></p>
+                        <div class="buttons">
+                            <button class="approve" onclick="updateStatus(${transaction.id}, 'Approved')">Approve</button>
+                            <button class="decline" onclick="updateStatus(${transaction.id}, 'Declined')">Decline</button>
+                        </div>
+                    `;
+                    transactionsDiv.appendChild(transactionDiv);
+                });
+            } catch (error) {
+                console.error('Error fetching transactions:', error);
+                alert('Could not fetch transactions. Please check your server.');
+            }
+        }
+
+        // Function to update transaction status
+        async function updateStatus(transactionId, newStatus) {
+            try {
+                await axios.put(`http://localhost:3000/api/transactions/${transactionId}`, { status: newStatus });
+                document.getElementById(`status-${transactionId}`).textContent = newStatus;
+                alert(`Transaction ${transactionId} marked as ${newStatus}`);
+            } catch (error) {
+                console.error(`Error updating transaction ${transactionId}:`, error);
+                alert('Could not update transaction status. Please try again.');
+            }
+        }
+
+        // Fetch transactions on page load
+        fetchTransactions("http://localhost:3000/api/transactions");
+    </script>
+</body>
+</html>

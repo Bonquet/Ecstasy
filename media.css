@@ -1,0 +1,180 @@
+/* Responsive Design Adjustments */
+
+/* For tablets and small screens */
+@media screen and (max-width: 1024px) {
+    .header {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+.logo img{
+    padding-right: 10px;
+}
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .navbar button {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .dashboard {
+        margin-right: 0;
+    }
+
+    .kpi-cards {
+        flex-direction: column;
+    }
+
+    .kpi-card {
+        margin-bottom: 10px;
+    }
+
+    .overview table {
+        font-size: 14px;
+    }
+
+    .sidebar {
+        margin: 10px 0;
+    }
+}
+
+/* For mobile phones */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .navbar button {
+        padding: 8px 10px;
+    }
+
+    .modal-content {
+        max-width: 90%;
+    }
+
+    .user-profile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-profile input {
+        margin-top: 10px;
+    }
+
+    .sidebar, .dashboard {
+        padding: 10px;
+    }
+
+    .transaction-history li {
+        font-size: 12px;
+    }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .kpi-card {
+        font-size: 14px;
+    }
+
+    .overview table {
+        font-size: 12px;
+    }
+
+    .sidebar ul li {
+        font-size: 12px;
+    }
+
+    .performance-chart {
+        padding: 10px;
+    }
+
+    .promo-btn {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+
+
+/* Responsive Overview Table */
+@media screen and (max-width: 768px) {
+    .overview table {
+        border: none;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .overview table thead {
+        display: none;
+    }
+
+    .overview table tbody tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .overview table tbody tr td {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+        border-bottom: none;
+    }
+
+    .overview table tbody tr td:last-child {
+        border-bottom: none;
+    }
+
+    .overview table tbody tr td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #555;
+        margin-right: 10px;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .navbar {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+        display: none;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar button {
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+        margin: 6px;
+    }
+}

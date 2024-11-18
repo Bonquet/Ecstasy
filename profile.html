@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Value Investment Platform | Coinwave.com</title>
+    <link rel="shortcut icon" href="./resources/img/Coinwave-removebg-preview-removebg-preview-modified.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+        href="/css/app-wa-3b124ff0e0d7a67cd8c995d0aeb1d15a.css?vsn=d">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="./resources/img/Cryptwave-removebg-preview.png" alt="">
+        </div>
+
+        <!-- Navbar Toggle for Small Screens -->
+        <button class="navbar-toggle" id="navbarToggle">☰ Menu</button>
+
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <button href="#">Dashboard</button>
+            <button href="#" id="deposits">Deposits</button>
+            <button href="#" id="withdrawals">Withdrawals</button>
+            <button href="#">Transactions</button>
+        </nav>
+
+        <div id="depositModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeDeposit">&times;</span>
+                <h2>Deposit Funds</h2>
+                <p>Enter the amount you want to deposit.</p>
+                <input type="text" placeholder="Min= $10     Max= $1000000" class="modal-input" required>
+
+                <!-- Payment Method Options -->
+                <div class="payment-methods">
+                    <p>Select Payment Method:</p>
+                    <label><input type="radio" name="paymentMethod" value="Bitcoin" checked><img
+                            src="./resources/img/bitcoin-svgrepo-com.svg" alt=""> Bitcoin</label>
+                </div>
+
+                <button class="modal-button" id="confirmDepositButton">Confirm Deposit</button>
+            </div>
+        </div>
+
+        <!-- Payment Details Modal -->
+        <div id="paymentDetailsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closePaymentDetails">&times;</span>
+                <h2>Payment Details</h2>
+
+                <div class="payment-summary">
+                    <div class="summary-item"><span>Amount:</span> <span id="amountDisplay">20.00 $</span></div>
+                    <div class="summary-item"><span>Charge:</span> <span id="chargeDisplay">0.00 $</span></div>
+                    <div class="summary-item"><span>Payable:</span> <span id="payableDisplay">20.00 $</span></div>
+                    <div class="summary-item"><span>Conversion Rate:</span> <span id="conversionRateDisplay">1 USD =
+                            0.000034 BTC</span></div>
+                    <div class="summary-item"><span>In BTC:</span> <span id="btcEquivalentDisplay">0.00068 BTC</span>
+                    </div>
+                </div>
+
+                <button class="modal-button" id="payNowButton">Pay Now</button>
+            </div>
+        </div>
+
+        <!-- Payment Instructions Modal -->
+        <div id="paymentInstructionsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closePaymentInstructions">&times;</span>
+                <h2>How to Complete Your Payment</h2>
+
+                <div id="paymentMessage" class="instructions">
+                    <!-- The sliding message will be dynamically inserted here -->
+                </div>
+
+                <!-- Dynamic Message Placeholder -->
+                <div id="paymentMessage2" class="instructions">
+                    <p>Please pay the specified amount to the wallet address below:</p>
+                    <p><strong>1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</strong></p>
+                    <p>After the transaction is complete, click "Done" to confirm.</p>
+                </div>
+
+                <button class="modal-button" id="doneButton">Done</button>
+            </div>
+        </div>
+
+        <div id="withdrawModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeWithdraw">&times;</span>
+                <h2>Withdraw Funds</h2>
+                <p>Enter the amount you want to withdraw.</p>
+                <input type="number" placeholder="Amount" class="modal-input" min="10" max="100000" step="100" required>
+                <button class="modal-button">Confirm Withdraw</button>
+            </div>
+        </div>
+
+        <div class="user-profile">
+            <!-- <label for="referral">Referral link:</label>
+            <input type="url" name="referral" id=""> -->
+            <i class="fa-solid fa-circle-user" id="logout"></i>
+
+            <!-- Dropdown menu -->
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#" id="myAccount">My Account</a>
+                <a href="#" id="logoutLink">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Left Section -->
+        <section class="dashboard">
+            <h2 id="userGreeting">Hi, [Loading Name]...</h2>
+            <p>Invest your money with small risk!</p>
+
+            <!-- Key Performance Indicators -->
+            <div class="kpi-cards">
+                <div class="kpi-card" style="background-color: #ffebcc;">
+                    <div class="card-name">
+                        <h3>Main Balance</h3>
+                        <i class="fa-solid fa-sparkle"></i>
+                    </div>
+                    <p>$0.00</p>
+                </div>
+
+                <div class="kpi-card" style="background-color: #f0e1ff;">
+                    <div class="card-name">
+                        <h3>Interest</h3>
+                        <i class="fa-solid fa-sparkle"></i>
+                    </div>
+                    <p>$0.00</p>
+                </div>
+
+                <div class="kpi-card" style="background-color: #cce7ff;">
+                    <div class="card-name">
+                        <h3>Total Earn</h3>
+                        <i class="fa-solid fa-sparkle"></i>
+                    </div>
+                    <p>$0.00</p>
+                </div>
+            </div>
+
+            <!-- Performance Chart -->
+            <div class="performance-chart">
+                <canvas id="performanceChart"></canvas>
+                <p class="chart-label">Jan - Dec, 2023</p>
+            </div>
+
+            <!-- Overview Table -->
+            <div class="overview">
+                <h3>Overview</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Stock Name</th>
+                            <th>Stock Price</th>
+                            <th>Volume</th>
+                            <th>Market Cap</th>
+                            <th>24H Low</th>
+                            <th>24H High</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Stock Name">Spotify NYSE:SPOT</td>
+                            <td data-label="Stock Price">$297.408</td>
+                            <td data-label="Volume">243.55M</td>
+                            <td data-label="Market Cap">$597.855B</td>
+                            <td data-label="24H Low">$277.99</td>
+                            <td data-label="24H High">$306.53</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Stock Name">Uber NYSE:UBER</td>
+                            <td data-label="Stock Price">$43.55</td>
+                            <td data-label="Volume">435.65M</td>
+                            <td data-label="Market Cap">$678.53B</td>
+                            <td data-label="24H Low">$39.45</td>
+                            <td data-label="24H High">$45.78</td>
+                        </tr>
+                        <!-- Additional rows here -->
+                    </tbody>
+
+                </table>
+            </div>
+        </section>
+        .
+
+        <!-- Sidebar Section -->
+        <div class="sidebar">
+            <!-- Transaction History Section (Right Sidebar) -->
+            <div class="card">
+                <h3>Transaction History</h3>
+                <ul id="transactionHistoryList" class="transaction-history-list">
+                    <!-- Transactions will be dynamically inserted here -->
+                </ul>
+            </div>
+
+            <div class="card">
+                <!-- Most Viewed Section -->
+                <h3>Most Viewed</h3>
+                <ul>
+                    <li>Spotify - $159.35</li>
+                    <li>Uber - $41.23</li>
+                    <li>Amazon - $127.74</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <!-- Top Gainers Section -->
+                <h3>Top Gainers</h3>
+                <ul>
+                    <li>Google - $1589.45 (+2.5%)</li>
+                    <li>Meta - $297.67 (+1.9%)</li>
+                    <li>Apple - $168.22 (+1.4%)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <!-- Top Losers Section -->
+                <h3>Top Losers</h3>
+                <ul>
+                    <li>PepsiCo - $56.24 (-0.8%)</li>
+                    <li>Coca Cola - $55.24 (-0.7%)</li>
+                    <li>Uber - $41.23 (-0.5%)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- JavaScript for Charts -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="script.js"></script>
+
+        <script>
+            fetch('fetch_last_name.php')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch user data');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.last_name) {
+                        const greetingElement = document.getElementById('userGreeting');
+
+                        // Capitalize the first letter of the last name
+                        const lastName = data.last_name.charAt(0).toUpperCase() + data.last_name.slice(1).toLowerCase();
+
+                        // Determine the appropriate greeting based on the current time
+                        const currentHour = new Date().getHours();
+                        let greeting;
+                        if (currentHour < 12) {
+                            greeting = "Good Morning";
+                        } else if (currentHour < 18) {
+                            greeting = "Good Afternoon";
+                        } else {
+                            greeting = "Good Evening";
+                        }
+
+                        greetingElement.textContent = `${greeting}, ${lastName}`;
+                    } else {
+                        console.error('Last name not found in response');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching user data:', error);
+                });
+
+
+            function initiateDeposit() {
+                const amount = document.getElementById('depositAmount').value; // Assuming there’s an input field with this ID
+
+                fetch('deposit.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({ 'amount': amount })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert(data.message);
+                            // Optionally, refresh the transaction history to show the new "Pending" deposit
+                            fetchTransactionHistory();
+                        } else {
+                            alert(data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error initiating deposit:', error);
+                    });
+            }
+
+            function fetchTransactionHistory() {
+                fetch('fetch_transactions.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const transactionList = document.getElementById('transactionList');
+                        transactionList.innerHTML = '';
+                        data.forEach(transaction => {
+                            const status = transaction.status;
+                            const transactionItem = document.createElement('li');
+                            transactionItem.textContent = `Transaction #${transaction.transaction_id}: $${transaction.amount} - ${status} on ${transaction.date}`;
+                            transactionList.appendChild(transactionItem);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching transactions:', error));
+            }
+
+            // Call fetchTransactionHistory every 30 seconds
+            setInterval(fetchTransactionHistory, 30000);
+
+        </script>
+</body>
+
+</html>

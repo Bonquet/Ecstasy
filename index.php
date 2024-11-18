@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register & Login | Coinwave.com</title>
+    <title>Register & Login | Cryptwave.com</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="login.css">
 </head>
@@ -14,7 +14,7 @@
         <div class="input-group">
            <i class="fas fa-user"></i>
            <input type="text" name="fName" id="fName" placeholder="First Name" required>
-           <label for="fname">First Name</label>
+           <label for="fName">First Name</label>
         </div>
         <div class="input-group">
             <i class="fas fa-user"></i>
@@ -23,18 +23,18 @@
         </div>
         <div class="input-group">
             <i class="fas fa-envelope"></i>
-            <input type="email" name="email" id="email" placeholder="Email" required>
-            <label for="email">Email</label>
+            <input type="email" name="email" id="signupEmail" placeholder="Email" required>
+            <label for="signupEmail">Email</label>
         </div>
         <div class="input-group">
             <i class="fas fa-lock"></i>
-            <input type="password" name="password" id="password" placeholder="Password" required>
-            <label for="password">Password</label>
+            <input type="password" name="password" id="signupPassword" placeholder="Password" required>
+            <label for="signupPassword">Password</label>
         </div>
        <input type="submit" class="btn" value="Sign Up" name="signUp">
       </form>
       <p class="or">
-        ----------or--------
+        --------or--------
       </p>
       <div class="icons">
         <i class="fab fa-google"></i>
@@ -51,13 +51,13 @@
         <form method="post" action="register.php">
           <div class="input-group">
               <i class="fas fa-envelope"></i>
-              <input type="email" name="email" id="email" placeholder="Email" required>
-              <label for="email">Email</label>
+              <input type="email" name="email" id="signinEmail" placeholder="Email" required>
+              <label for="signinEmail">Email</label>
           </div>
           <div class="input-group">
               <i class="fas fa-lock"></i>
-              <input type="password" name="password" id="password" placeholder="Password" required>
-              <label for="password">Password</label>
+              <input type="password" name="password" id="signinPassword" placeholder="Password" required>
+              <label for="signinPassword">Password</label>
           </div>
           <p class="recover">
             <a href="#">Recover Password</a>
@@ -76,6 +76,7 @@
           <button id="signUpButton">Sign Up</button>
         </div>
       </div>
-      <script src="login.js"></script>
+
+      <script src = "login.js"></script>
 </body>
 </html>

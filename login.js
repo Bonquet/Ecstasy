@@ -1,13 +1,21 @@
-const signUpButton=document.getElementById('signUpButton');
-const signInButton=document.getElementById('signInButton');
-const signInForm=document.getElementById('signIn');
-const signUpForm=document.getElementById('signup');
+        // JavaScript to toggle between Sign In and Sign Up forms
+        const signUpButton = document.getElementById("signUpButton");
+        const signInButton = document.getElementById("signInButton");
+        const signUpForm = document.getElementById("signup");
+        const signInForm = document.getElementById("signIn");
 
-signUpButton.addEventListener('click',function(){
-    signInForm.style.display="none";
-    signUpForm.style.display="block";
-})
-signInButton.addEventListener('click', function(){
-    signInForm.style.display="block";
-    signUpForm.style.display="none";
-})
+        // Show sign-up form when 'Sign Up' button is clicked
+        signUpButton.addEventListener("click", () => {
+          signUpForm.style.display = "block";
+          signInForm.style.display = "none";
+        });
+
+        // Show sign-in form when 'Sign In' button is clicked
+        signInButton.addEventListener("click", () => {
+          signUpForm.style.display = "none";
+          signInForm.style.display = "block";
+        });
+
+        // Default view: Show the Sign In form
+        signInForm.style.display = "block";
+        signUpForm.style.display = "none";

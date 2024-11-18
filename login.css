@@ -135,3 +135,24 @@ button:hover{
     text-decoration:underline;
     color:blue;
 }
+
+@media (max-width: 600px) {
+    .container {
+        width:80%;
+        padding: 1rem;
+        margin: 20px auto;
+    }
+    .form-title {
+        font-size: 1.2rem;
+    }
+    form {
+        margin: 0 1rem;
+    }
+    .form-control {
+        font-size: 1rem;
+    }
+    .btn {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+}
